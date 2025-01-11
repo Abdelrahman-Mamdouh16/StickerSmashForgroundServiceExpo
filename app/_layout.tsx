@@ -5,11 +5,16 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-
+import { NativeModules } from 'react-native';
+ 
+const { MyServiceModule } = NativeModules;
 import { useColorScheme } from './../hooks/useColorScheme';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
+
 SplashScreen.preventAutoHideAsync();
+// console.log(NativeModules);
+
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -19,8 +24,10 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (loaded) {
+      MyServiceModule?.startService();
       SplashScreen.hideAsync();
     }
+    // return ()=> MyServiceModule?.stopService();
   }, [loaded]);
 
   if (!loaded) {
