@@ -28,7 +28,7 @@ class MyForegroundService : Service() {
     private lateinit var handler: Handler
     private lateinit var runnable: Runnable
     private lateinit var socket: Socket
-    private val userToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvZ3VhcmRpYW4uaXZ5aXMub3JnIiwiaWF0IjoxNzM2NjEwNDMxLCJleHAiOjE3NDUyNTA0MzEsImRhdGEiOnsidXNlcklkIjoiODU3IiwidXNlck5hbWUiOiJtb2hhbW1lZGVscHJ5QHlhaG9vLmNvbSIsInJvbGUiOiJwYXJlbnQiLCJndWFyZGlhbiI6eyJpZCI6Ijg1NyIsImZpcnN0bmFtZSI6Ik1vaGFtbWFkIiwibGFzdG5hbWUiOiJBbC1CZXJyeSIsIm1pZGRsZW5hbWUiOiJubm4iLCJuYXRpb25hbGl0eSI6ImJhdHN3YW5hIiwic3NuIjoiNDU2MTIzNzk5ODg1IiwiYWRkcmVzcyI6IkNhaXJvIiwibGl2aW5nIjoibnVsbCIsIm9jdXBhdGlvbiI6IiIsImNvdW50cnkiOiJFZ3lwdCIsImVkdWNhdGlvbl9sZXZlbCI6IkhpZ2ggU2Nob29sIEdyYWR1YXRlIChoaWdoIHNjaG9vbCBkaXBsb21hIG9yIGVxdWl2YWxlbnQpIiwic2Nob29sbmFtZSI6IkZhY3VsdHkgb2YgRW5naW5lZXJpbmcgb2YgQWluIFNoYW1zIFVuaXZlcnNpdHkiLCJob3VzZWhvbGQiOiJudWxsIiwibW9iaWxlIjoiMDExNDcyNjQyMjQiLCJtb2JpbGVfcGhvbmVfY29kZSI6Im51bGwiLCJkcml2ZWlkIjpudWxsLCJnZW5kZXIiOm51bGwsInVzZXJuYW1lIjoibW9oYW1tZWRlbHByeUB5YWhvby5jb20iLCJwYXNzd29yZCI6IjEyMzQ1NiIsImRpc3BsYXluYW1lIjoiTW9oYW1tYWQgQWwtQmVycnkiLCJndWFyZGlhbl9pZCI6IjQwOSIsIm1pZCI6IjI2OCIsInN1c3BlbmRlZCI6IjAiLCJzdGF0dXMiOm51bGwsInNjaG9vbG9neV9pZCI6bnVsbH19fQ.rDwp-HF3iEnKhNSz0-pkoDqho8GOqL3PN5WNUA-P7d0"
+    private val userToken = ""
      private var isRunning = false
     override fun onCreate() {
         super.onCreate()
@@ -131,7 +131,7 @@ class MyForegroundService : Service() {
       private fun connectToSocket() {
         try {
             // استبدل هذا بـ عنوان خادمك الفعلي
-            socket = IO.socket("https://ws.ivyis.org/")
+            socket = IO.socket("")
 
             // الاتصال بالخادم
             socket.on(Socket.EVENT_CONNECT) {
